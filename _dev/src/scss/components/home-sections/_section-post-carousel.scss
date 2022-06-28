@@ -1,9 +1,6 @@
 .sc--post-carousel {
     padding: 64px 0;
     
-    @include media ('>=lg') {
-        padding: 96px 0;
-    }
 }
 
 
