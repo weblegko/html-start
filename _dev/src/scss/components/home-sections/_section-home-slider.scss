@@ -20,7 +20,8 @@
     }
 
     .slick-arrow {
-        background-color: #F3DB9B;
+        background-color: $color-1;
+        color: #fff;
         border: none;
         width: 40px;
         height: 40px;
@@ -32,8 +33,9 @@
         outline: none;
         line-height: 1;
         
+        
         &:hover {
-            background-color: #FFCA41;
+            background-color: $color-3;
         }
     }
     

@@ -31,7 +31,7 @@ export default class ScrollToTopBtn extends Component {
         });
 
         if ($scrollTopBtn.hasClass('top-btn-show')) {
-        $scrollTopBtn.removeClass('top-btn-show');
+            $scrollTopBtn.removeClass('top-btn-show');
         }
     }
 }

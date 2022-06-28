@@ -1,9 +1,7 @@
 // import "matchmedia-polyfill";
 // import "matchmedia-polyfill/matchMedia.addListener";
 
-//import objectFitImages from "object-fit-images";
-console.log('Ninja Dragon 2');
-
+//import objectFitImages from "object-fit-images"; // Полифил
 import "lazysizes";
 
 //import {MDCRipple} from '@material/ripple';
@@ -14,7 +12,6 @@ import Slider from "./components/slider";
 import ScrollToTopBtn from "./components/scrolltotop-btn";
 import MainMenu from './components/main-menu';
 import NavBar from "./components/nav-bar";
-import "./M/parallax";
 import ymaps from 'ymaps';
 
 class Application {
@@ -45,7 +42,7 @@ class Application {
     // Инициализации
     initCommon() {
 
-        new Lightbox();
+        //new Lightbox();
 
         new ScrollToTopBtn();
 
@@ -53,23 +50,15 @@ class Application {
 
         new MainMenu('ul.sf-menu');
 
-        $('.parallax').parallax();
-        
-        
-        //console.log('history', history);
-
-
         /* Нажали на кнопочку отправки формы обьратной связи*/
         $('#zayavka-button').click(function(event) {
             event.preventDefault();
             $('#zayvka-submit').trigger('click');
         });
 
-
         if( (history.length == 0) && !document.referrer ) {
             $('.js-go-back').hide();
         }  
-
 
         // прокрутить вниз первый экран
         $('.js-go-back').click(function (e) {
@@ -79,28 +68,10 @@ class Application {
             }
         });
 
-
-        // $('.js-toggle-search-box').click(function (e) {
-        //     e.preventDefault();
-        //     let $this = $(this);
-        //     if ($this.hasClass('active')) {
-        //         $this.removeClass('active');
-        //         $('.search-box').hide();
-        //         //$this.text('Поиск');
-        //     } else {
-        //         $this.addClass('active');
-        //         $('.search-box').show();
-        //         //$this.text('Скрыть');
-        //     }
-        // });
-        
-
-        //objectFitImages
-        if (typeof objectFitImages === 'function') {
-            objectFitImages($('.image-cover img'));
-            
-        }
-
+        //objectFitImages - полифил активация
+        // if (typeof objectFitImages === 'function') {
+        //     objectFitImages($('.image-cover img'));
+        // }
         
         // прокрутить вниз первый экран
         $('.js-go-down').click(function (e) {
@@ -109,8 +80,6 @@ class Application {
             $("html, body").animate(
                 { scrollTop: y }, 1000);
         });
-
-
 
         // // Плавная прокрутка при переходе по якорю
         // const $root = $('html, body');
@@ -185,46 +154,7 @@ class Application {
     }
 
 
-    initAjaxBlogLoad() {
-  
-        $('#load-more').click(function(event){
-            event.preventDefault();
-
-            console.log('Load more posts');
-            
-            const $but = $(this);
-
-            if($but.attr('disabled') != 'disabled') {
-
-                $but.attr("disabled", true).find('.text').html("<i class='icon-spin spin'></i>Загрузка..."); // изменяем текст кнопки, вы также можете добавить прелоадер
-                const data = {
-                    'action': 'loadmore',
-                    'query': true_posts,
-                    'page' : current_page
-                };
-                $.ajax({
-                    url:ajaxurl, // обработчик
-                    data:data, // данные
-                    type:'POST', // тип запроса
-                    success:function(data){
-                    if( data ) {
-                        $('#load-more-wrp').before(data).find('.text').html("<i class=' icon-spin'></i>Ещё записи дневника"); // вставляем новые посты
-                        $but.attr("disabled", false);
-                        current_page++; // увеличиваем номер страницы на единицу
-                        if (current_page == max_pages) $("#load-more-wrp").remove(); // если последняя страница, удаляем кнопку
-                    } else {
-                        $('#load-more-wrp').remove(); // если мы дошли до последней страницы постов, скроем кнопку
-                    }
-                    }
-                });
-
-            } //if not disabled
-
-        });
-    }
-
-
-  
+     
     // Инициализация всех слайдеров
     initSliders() {
 
@@ -346,30 +276,21 @@ class Application {
      // кастыльное решение 100vh для мобильников
     initMobileViewPortHeight() {
         // https://css-tricks.com/the-trick-to-viewport-units-on-mobile/
-
         // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
         let vh = window.innerHeight * 0.01;
         // Then we set the value in the --vh custom property to the root of the document
         document.documentElement.style.setProperty('--vh', `${vh}px`);
-
         let document_width = window.innerWidth; 
-        
         // We listen to the resize event (а ресайз в мобилках срабатывает и при скроле, когда исчезает строка ввода адреса в браузере)
         window.addEventListener('resize', () => {
-                                    
             // We execute the same script as before
-                if (document_width != window.innerWidth) {
-
-                    // console.log('document_width=', document_width);
-                    // console.log('window.innerWidth=', window.innerWidth);
-
-                    document_width = window.innerWidth; 
-                    let vh = window.innerHeight * 0.01;                    
-                    document.documentElement.style.setProperty('--vh', `${vh}px`);
-                }
+            if (document_width != window.innerWidth) {
+                document_width = window.innerWidth; 
+                let vh = window.innerHeight * 0.01;                    
+                document.documentElement.style.setProperty('--vh', `${vh}px`);
+            }
         });
     }
-
     
 }
 

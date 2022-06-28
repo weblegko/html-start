@@ -1,14 +1,13 @@
 // superfish menu
 
-$sfmenu-item-color: #000;
+$sfmenu-item-color: $color-text;
 $sfmenu-item-hover-color: #fff;
-$sfmenu-item-bg-color: $yellow-light;
+$sfmenu-item-bg-color: $color-2;
 $sfmenu-item-hover-bg-color: $color-1;
 $sfmenu-triangle-color: $color-text;
 $sfmenu-triangle-hover-color: #fff;
-$menu-dropdown-item-color: #000;
-
-$sub-menu-bg-color: $yellow-light;
+$menu-dropdown-item-color: #fff;
+$sub-menu-bg-color: $color-2;
 
 .menu-wrap {
     display: none;
@@ -44,7 +43,7 @@ $sub-menu-bg-color: $yellow-light;
         position: relative;        
         text-transform: uppercase;
         text-decoration: none !important;
-        color: $color-text;
+        color: $menu-dropdown-item-color;
         font-family: $font-text;
         font-style: normal;
         font-size: 0.9rem;
@@ -54,6 +53,9 @@ $sub-menu-bg-color: $yellow-light;
     // Верхний уровень меню
     > li {
         margin: 0 1px 0 0;
+        ul {
+            //border-top: 2px $color-2 solid;
+        }
 
         > a {
             transition: background-color 0.2s ease;
@@ -63,6 +65,7 @@ $sub-menu-bg-color: $yellow-light;
             display: flex;
             align-items: center;
             justify-content: center;
+            color: $sfmenu-item-color;
             
         }
         
@@ -121,7 +124,7 @@ $sub-menu-bg-color: $yellow-light;
         > li.current-menu-item > a,
         > li.current-menu-ancestor > a {
             //background-color: rgba(0, 0, 0, 0.15);
-            background-color: $yellow-dark;
+            background-color: darken($color-2, 3%);
             color: $sfmenu-item-hover-color;
         }
     }

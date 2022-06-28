@@ -29,7 +29,7 @@ table:not([class]) {
         th,
         td {
             font-weight: 700;
-            background-color: $color-2;
+            background-color: $gray-light;
             color: $color-text;
         }
     }
@@ -39,14 +39,21 @@ table:not([class]) {
             &:nth-child(odd) {
                 th,
                 td {
-                    background-color: $gray-light;
+                    background-color: #fff;
                 }
             }
 
             &:nth-child(even) {
                 th,
                 td {
-                    background-color: #E6E6E6;
+                    background-color: #f5f5f5;
+                }
+            }
+
+            &:last-child {
+                th,
+                td {
+                    border-bottom: 1px solid #f1f1f1;
                 }
             }
         }

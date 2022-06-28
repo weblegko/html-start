@@ -36,9 +36,10 @@
         transform: translateY(-50%);
         z-index: 10;
         outline: none;
-
+        line-height: 0;    
+        font-size: 24px;
+        
         &:hover {
-            //background-color: #FFCA41;
             opacity: 1;
         }
     }

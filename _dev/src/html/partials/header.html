@@ -68,12 +68,12 @@
                             <i></i>
                         </button>
                         <div class="nb-search__box">
-                            <div id="search_widget" class="search-widget">
-                                <form method="get" action="#">
+                            <div id="search_widget">
+                                <form method="get" action="#" class="search-form">
                                     <input type="hidden" name="controller" value="search">
                                     <input type="text" name="s" value="" placeholder="Поиск в каталоге"
-                                        aria-label="Поиск">
-                                    <button type="submit">
+                                        aria-label="Поиск" class="search-form__input">
+                                    <button type="submit" class="search-form__submit">
                                         <i class="icon-search"></i>
                                     </button>
                                 </form>
@@ -90,11 +90,6 @@
                             </div>
                         </div>
                         <div class="h-cart">
-                            
-                            <!-- empty cart -->
-                            <!-- <div class="h-cart__inner">
-                                <i class="h-cart__icon icon-shopping-cart"></i>
-                            </div> -->
                             
                             <div class="h-cart__inner blockcart cart-preview active">
                                 <a rel="nofollow" href="#">

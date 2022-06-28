@@ -1,8 +1,8 @@
 {
-    "name": "my-project",
-    "version": "1.0.0",
-    "description": "dima test project",
-    "main": "index.js",
+    "name": "html-start",
+    "version": "1.0.1",
+    "description": "html-start template",
+    "main": "gulp.js",
     "scripts": {
         "test": "test"
     },

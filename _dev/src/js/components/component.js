@@ -1,5 +1,4 @@
 import jQuery from "jquery";
-import {merge} from "lodash";
 
 //export default class Component extends Emitter {
 export default class Component {
@@ -9,13 +8,13 @@ export default class Component {
 
         if (args.length === 2) {
             this.root = args[0];
-            this.options = merge(this._defaultOptions, args[1]);
+            this.options = Object.assign({}, this._defaultOptions, args[1]);
             
         } else if (args.length === 1) {
             if (Component.isjQuery(args[0])) {
                 this.root = args[0];
             } else {
-                this.options = merge(this._defaultOptions, args[0]);
+                this.options = Object.assign({}, this._defaultOptions, args[0]);
             }
         }
     }

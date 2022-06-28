@@ -14,6 +14,16 @@
 @import "./base/video";
 @import "./base/print";
 
+@import "./layout/core";
+@import "./layout/header";
+@import "./layout/drawer";
+@import "./layout/nav-bar";
+@import "./layout/header-mobile";
+@import "./layout/mobile-menu";
+@import "./layout/sf-menu";
+@import "./layout/sidebar";
+@import "./layout/footer";
+
 @import "./components/common/forms";
 @import "./components/common/buttons";
 @import "./components/common/scroll-to-top-btn";
@@ -33,14 +43,4 @@
 @import "./components/widgets/widget";
 @import "./components/widgets/widget-tag-cloud";
 
-@import "./layout/core";
-@import "./layout/header";
-@import "./layout/drawer";
-@import "./layout/nav-bar";
-@import "./layout/header-mobile";
-@import "./layout/mobile-menu";
-@import "./layout/sf-menu";
-@import "./layout/sidebar";
-@import "./layout/footer";
-
-//@import "./pages/home";
+@import "./pages/home";

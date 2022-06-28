@@ -64,11 +64,11 @@ const CssForAddToVendors = [
 gulp.task('serve', function(done) {
     browserSync.init({
         server: buildPath,
-        //proxy: "site.loc" // если работаем с внешним вебсервером
+        //proxy: "site.loc" // если работаем с внешним вебсервером site.loc - заменить на свой домен
     });
     browserSync.watch([
         buildPath + 'js/*.*', 
-        //buildPath + '../**/*.php'
+        //buildPath + '../**/*.php' // раскомментировать - если надо следить за изменением php файлов
     ]).on('change', browserSync.reload);
     done();
 });
@@ -85,8 +85,6 @@ gulp.task('html', () => {
         .pipe(nunjucksRender({ path: [paths.src.html, paths.src.html + 'layouts/', paths.src.html + 'partials/'] }))
         .pipe(gulp.dest(paths.build.html));
 });
-
-
 /**
  * HTML nunjucks layout
  */
@@ -350,19 +348,13 @@ gulp.task('watch', (done) => {
 
 /**
  * Сборка проекта 
- * Закоментировать ненужный способ сборки
+ * Разработка: gulp build 
+ * Продакшен: gulp build --prod 
  */
-
-// Собираем всё
 gulp.task('build', gulp.series('clean', 'scss_vendors', gulp.parallel('fonts', 'img', 'scss', 'js', 'html'), 'add_to_vendors_css'));
 
-// Сборка стили + javascript
-//gulp.task('build', gulp.parallel('scss', 'js'));
-
-// Сборка только стили
-//gulp.task('build', gulp.series('scss'));
 
 /**
- *  Таск который выполняются по умолчанию
+ *  Таск который выполняются по умолчанию при запуске в консоле команды gulp
  */
 gulp.task('default', gulp.series('build', gulp.parallel('watch', 'serve')));
