@@ -22,6 +22,7 @@
     margin-top: 64px;
 	padding: 0;
 	min-height: 659px;
+    overflow: hidden;
 
 	.sc__title {
 		color: #fff;
@@ -31,15 +32,7 @@
 		line-height: 1.7;
 		color: #fff;
 	}
-
-	.btn-wrp {
-		padding-top: 57px;
-		text-align: left;
-
-		@media (--to-tablet) {
-			text-align: center;
-		}
-	}
+	
 }
 
 .right-block {
@@ -49,11 +42,8 @@
 	background-color: rgba(0,0,0, 0.8);
 	left: 0;
 	padding: 20px;
-	
-	
 
 	@include media ('>=md') {
-		
 		width: 5000px;
 		padding: 115px;
 		padding-top: 80px;
@@ -74,11 +64,11 @@
 		width: 100%;
 		
 		@include media ('>=md') {
-			width: 400px;						
+			width: 250px;						
 		}
 		
 		@include media ('>=xl') {
-			width: 500px;
+			width: 350px;
 		}
 		
 
