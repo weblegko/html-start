@@ -1,5 +1,6 @@
 import Slider from "./components/slider";
 import Lightbox from "./components/lightbox";
+import ScrollToTopBtn from "./components/scrolltotop-btn";
 
 class Application {
 
@@ -15,6 +16,8 @@ class Application {
     initCommon() {
 
         new Lightbox();
+
+        new ScrollToTopBtn();
        
         // // Плавная прокрутка при переходе по якорю
         // const $root = $('html, body');

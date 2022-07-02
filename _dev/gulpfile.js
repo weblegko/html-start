@@ -55,6 +55,7 @@ const paths = {
  */
 const CssForAddToVendors = [
     './node_modules/slick-carousel/slick/slick.css',
+    './node_modules/@fancyapps/fancybox/dist/jquery.fancybox.css',
 ];
 
 
