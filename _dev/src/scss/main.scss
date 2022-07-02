@@ -16,26 +16,11 @@
 
 @import "./layout/core";
 @import "./layout/header";
-@import "./layout/drawer";
-@import "./layout/nav-bar";
-@import "./layout/header-mobile";
-@import "./layout/sf-menu";
-@import "./layout/sidebar";
 @import "./layout/footer";
+@import "./layout/main-menu";
 
-@import "./components/common/forms";
-@import "./components/common/buttons";
-@import "./components/common/scroll-to-top-btn";
-@import "./components/common/bread-crumbs";
-@import "./components/common/pagination";
-@import "./components/common/prev-next";
 
-@import "./components/content-carousel";
-@import "./components/content-slider";
-@import "./components/error-404";
-@import "./components/page";
+@import "./components/buttons";
+@import "./components/slider";
+@import "./components/carousel";
 
-@import "./components/home-page/home-slider";
-@import "./components/home-page/home-img-text";
-@import "./components/home-page/home-bg-fixed";
-@import "./components/home-page/home-yandex-map";
