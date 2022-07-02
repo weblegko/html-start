@@ -42,7 +42,7 @@ class Application {
     // Инициализации
     initCommon() {
 
-        //new Lightbox();
+        new Lightbox();
 
         new ScrollToTopBtn();
 

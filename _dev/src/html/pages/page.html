@@ -11,7 +11,7 @@
 
         <div class="site-main">
             <div class="container">
-            
+
                 {% include 'partials/bread-crumbs.html' %}
 
                 <header class="page-header">
@@ -20,6 +20,56 @@
 
                 <div class="page-content content">
                     {% include 'partials/fish-content.html' %}
+
+                    <h2>Slick-slider</h2>
+                    <div class="slider-wrap">
+                        <div class="slider">
+                            <div class="slider__item"><img src="/img/ibiza/1.jpg" alt=".." /></div>
+                            <div class="slider__item"><img src="/img/ibiza/2.jpg" alt=".." /></div>
+                            <div class="slider__item"><img src="/img/ibiza/3.jpg" alt=".." /></div>
+                            <div class="slider__item"><img src="/img/ibiza/4.jpg" alt=".." /></div>
+                            <div class="slider__item"><img src="/img/ibiza/5.jpg" alt=".." /></div>
+                            <div class="slider__item"><img src="/img/ibiza/6.jpg" alt=".." /></div>
+                            <div class="slider__item"><img src="/img/ibiza/7.jpg" alt=".." /></div>
+                            <div class="slider__item"><img src="/img/ibiza/8.jpg" alt=".." /></div>
+                        </div>
+                    </div>
+
+                    <h2>Slick-carousel</h2>
+                    <div class="carousel-wrap">
+                        <div class="carousel">
+                            <div class="carousel__item"><img src="/img/ibiza/1.jpg" alt=".." /></div>
+                            <div class="carousel__item"><img src="/img/ibiza/2.jpg" alt=".." /></div>
+                            <div class="carousel__item"><img src="/img/ibiza/3.jpg" alt=".." /></div>
+                            <div class="carousel__item"><img src="/img/ibiza/4.jpg" alt=".." /></div>
+                            <div class="carousel__item"><img src="/img/ibiza/5.jpg" alt=".." /></div>
+                            <div class="carousel__item"><img src="/img/ibiza/6.jpg" alt=".." /></div>
+                            <div class="carousel__item"><img src="/img/ibiza/7.jpg" alt=".." /></div>
+                            <div class="carousel__item"><img src="/img/ibiza/8.jpg" alt=".." /></div>
+                        </div>
+                    </div>
+
+
+                    <h2>Видео с ютюба</h2>
+                    <div class="video">
+                        <iframe width="1280" height="720" src="https://www.youtube.com/embed/-cw_7KWgML0"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+
+
+                    <h2>Модальные окна и галлерея Fancybox 3</h2>
+                    <div class="btns-wrap">
+                        <a class="btn js-link-modal" href="javascript:;" data-src="#modal">Fancybox модальное окно</a>
+
+                        <a class="btn" href="/img/ibiza/1.jpg" data-fancybox="gallery">Fancybox галерея</a>
+                        <a style="display: none;" href="/img/ibiza/2.jpg" data-fancybox="gallery"></a>
+                        <a style="display: none;" href="/img/ibiza/3.jpg" data-fancybox="gallery"></a>
+                        <a style="display: none;" href="/img/ibiza/4.jpg" data-fancybox="gallery"></a>
+                    </div>
+
+
 
                     <h2>Предыдущая - следующая страница сайта</h2>
                     {% include 'partials/prev-next.html' %}
