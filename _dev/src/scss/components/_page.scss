@@ -1,0 +1,11 @@
+.page-header {
+    margin-top: 32px;
+
+    &__title {
+        color: $color-2;
+        font-size: rem(44px);
+    }
+}
+.page-content {
+    padding-bottom: 32px;
+}

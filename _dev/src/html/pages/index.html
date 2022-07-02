@@ -1,18 +1,109 @@
-{% extends "layouts/layout-home-page.html" %}
+<!doctype html>
+<html lang="en">
 
-{% block content %}
-    {% include 'partials/home-page-sections/section-home-slider.html' %}
+{% include 'partials/head.html' %}
 
-    {% include 'partials/home-page-sections/section-text.html' %}
+<body>
 
-    {% include 'partials/home-page-sections/section-contacts.html' %}
+    <div class="root home-page">
 
-    {% include 'partials/home-page-sections/section-post-carousel.html' %}
+        {% include 'partials/header.html' %}
 
-    {% include 'partials/home-page-sections/section-bg-fixed.html' %}
-           
-    {% include 'partials/home-page-sections/section-img-text.html' %}
-    
-    {% include 'partials/home-page-sections/section-yandex-map.html' %}
+        <div class="site-main">
 
-{% endblock %}        
+            <div class="home-slider-wrap">
+                <div class="container">
+                    <div class="home-slider">
+                        <div class="home-slider__item"><img src="/img/ibiza/ibiza2.jpg" alt=".." /></div>
+                        <div class="home-slider__item"><img src="/img/ibiza/ibiza3.jpg" alt=".." /></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="home-text">
+                <div class="container">
+                    <h1>Главная страница сайта</h1>
+                    <div class="sc__content">
+                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis
+                            eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit,
+                            posuere a, pede.<br />
+                            Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci.
+                            Aenean
+                            dignissim pellentesque felis.</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="home-bg-fixed fixed-bg bg-1">
+                <div class="container">
+                    <div class="right-block">
+                        <div class="content-wrp">
+                            <h2 class="sc__title">Фиксированный фон</h2>
+                            <div class="sc__content">
+                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis
+                                    eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit,
+                                    posuere a, pede.</p>
+                                <p>Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean
+                                    dignissim pellentesque felis.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="home-img-text">
+                <div class="container">
+                    <h2>Картинка - текст</h2>
+                    <div class="row">
+                        <div class="col-12 col-md-4">
+                            <div class="img-text">
+                                <div class="img-text__img-wrap"><img width="100" src="/img/i1.svg" alt=".." /></div>
+                                <span class="img-text__title">Любая сложность</span>
+                                <span class="img-text__text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                                    Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque</span>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <div class="img-text">
+                                <div class="img-text__img-wrap"><img width="100" src="/img/i2.svg" alt=".." /></div>
+                                <span class="img-text__title">Быстро</span>
+                                <span class="img-text__text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                                    Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque</span>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <div class="img-text">
+                                <div class="img-text__img-wrap"><img width="100" src="/img/i3.svg" alt=".." /></div>
+                                <span class="img-text__title">Качественно</span>
+                                <span class="img-text__text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                                    Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </в>
+
+
+
+            <div class="container">
+                <div class="home-yandex-map">
+                    <div id="yandex-map" class="yandex-map-canvas"></div>
+                </div>
+            </div>
+
+        </div>
+
+        {% include 'partials/footer.html' %}
+
+    </div>
+
+    {% include 'partials/modal.html' %}
+
+    {% include 'partials/javascripts.html' %}
+
+</body>
+
+</html>

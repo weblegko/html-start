@@ -368,30 +368,6 @@
     }
 
 
-    .sf-menu > li {
-        background: #fff;
-        > a {
-            color: $gray-dark;
-            &:hover {
-                color: $color-1;
-            }
-        }
-    }
-
-    .sf-menu > li.sfHover {
-        
-        > a {
-        
-            color: $color-1;
-        
-        }
-    }
-
-    .sf-arrows .sf-with-ul:after {
-        border-top-color: $color-1;
-      }
-
-
     
     .nb-right-wrap {
         position: relative;
@@ -416,6 +392,4 @@
 .nav-bar.fixed.scroll-up {
     transform: translateY(88px);
     box-shadow: 0 8px 24px rgba(0,0,0,.15);
-    
 }
-

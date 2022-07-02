@@ -2,7 +2,13 @@
 
 .home-slider-wrap {
     width: 100%;
-    position: relative;   
+    position: relative;
+    margin-top: 32px;
+    margin-bottom: 32px;
+}
+
+.home-slider:not(.slick-initialized) {
+    display: none !important;
 }
 
 .home-slider {

@@ -1,13 +1,44 @@
-{% set page_title = 'Стилевая' %}
+<!doctype html>
+<html lang="en">
 
-{% extends "layouts/layout-page.html" %}
+{% include 'partials/head.html' %}
 
-{% block content %}
+<body>
 
-<div class="page-content content">
+    <div class="root">
 
-    {% include 'partials/fish-content-for-style-page.html' %}
+        {% include 'partials/header.html' %}
 
-</div>
+        <div class="site-main">
+            <div class="container">
+            
+                {% include 'partials/bread-crumbs.html' %}
 
-{% endblock %}
+                <header class="page-header">
+                    <h1 class="page-header__title">H1 Стилевая страница</h1>
+                </header>
+
+                <div class="page-content content">
+                    {% include 'partials/fish-content.html' %}
+
+                    <h2>Предыдущая - следующая страница сайта</h2>
+                    {% include 'partials/prev-next.html' %}
+
+                    <h2>Пагинация</h2>
+                    {% include 'partials/prev-next.html' %}
+                </div>
+
+            </div>
+        </div>
+
+        {% include 'partials/footer.html' %}
+
+    </div>
+
+    {% include 'partials/modal.html' %}
+
+    {% include 'partials/javascripts.html' %}
+
+</body>
+
+</html>

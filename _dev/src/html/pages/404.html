@@ -1,20 +1,35 @@
 {% set page_title = 'Ошибка 404' %}
 
-{% extends "layouts/layout-page-404.html" %}
+<!doctype html>
+<html lang="en">
 
-{% block content %}
+{% include 'partials/head.html' %}
 
+<body>
 
+    <div class="root">
 
-    <div class="error-404-wrap">
-        <div class="error-404">
-            <div class="container">
-                <div class="error-404__404">404</div>
-                <div class="error-404__text">Такой страницы не существует...</div>
+        {% include 'partials/header.html' %}
+
+        <div class="site-main">
+
+            <div class="error-404-wrap">
+                <div class="error-404">
+                    <div class="container">
+                        <div class="error-404__404">404</div>
+                        <div class="error-404__text">Такой страницы не существует...</div>
+                    </div>
+                </div>
             </div>
+
         </div>
+
+        {% include 'partials/footer.html' %}
+
     </div>
+    
+    {% include 'partials/javascripts.html' %}
 
+</body>
 
-
-{% endblock %}
+</html>

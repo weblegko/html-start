@@ -7,6 +7,10 @@
     margin-bottom: 32px;
 }
 
+.carousel:not(.slick-initialized) {
+    display: none !important;
+}
+
 .carousel {
     margin-left: -10px;
     margin-right: -10px;
@@ -21,7 +25,6 @@
             width: 100%;
         }
     }
-    
 
     .slick-arrow {
         background-color: $gray-light;
