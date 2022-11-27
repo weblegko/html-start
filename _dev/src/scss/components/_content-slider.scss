@@ -6,8 +6,11 @@
     margin-bottom: 32px;
 }
 
+.slider:not(.slick-initialized) {
+    display: none !important;
+}
+
 .slider {
-      
 
     &__item {
         overflow: hidden;
@@ -17,7 +20,6 @@
     }
 
     &__item-thumb {
-        // height: 520px;
         display: flex;
         align-items: center;
         justify-content: center;
