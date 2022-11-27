@@ -46,6 +46,7 @@ $sub-menu-bg-color: $color-2;
         color: $menu-dropdown-item-color;
         font-family: $font-text;
         font-style: normal;
+        font-weight: 700;
         font-size: 0.9rem;
         text-transform: uppercase;
     }
@@ -163,8 +164,8 @@ $sub-menu-bg-color: $color-2;
         padding-right: 29px !important;
 
         &:after {
-            font-family: "icons";
-            content: "c";
+            content: "\e80b";
+            font-family: "fontello";
             color: $sfmenu-triangle-color;
             font-size: 18px;
             position: absolute;

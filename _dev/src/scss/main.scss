@@ -17,30 +17,21 @@
 @import "./layout/core";
 @import "./layout/header";
 @import "./layout/drawer";
-@import "./layout/nav-bar";
-@import "./layout/header-mobile";
-@import "./layout/mobile-menu";
 @import "./layout/sf-menu";
 @import "./layout/sidebar";
 @import "./layout/footer";
 
-@import "./components/common/forms";
-@import "./components/common/buttons";
-@import "./components/common/scroll-to-top-btn";
-@import "./components/common/search-form";
-@import "./components/common/bread-crumbs";
-@import "./components/common/socio";
-@import "./components/common/pagination";
-@import "./components/common/prev-next-all";
+@import "./elements/forms";
+@import "./elements/buttons";
+@import "./elements/scroll-to-top-btn";
+@import "./elements/search-form";
+@import "./elements/bread-crumbs";
+@import "./elements/socio";
+@import "./elements/pagination";
+@import "./elements/prev-next-all";
 
-@import "./components/content-carousel";
 @import "./components/content-slider";
-@import "./components/card";
-@import "./components/page-header";
-@import "./components/page-content";
+@import "./components/content-carousel";
+@import "./components/page";
 @import "./components/error-404";
-@import "./components/home-sections/section";
-@import "./components/widgets/widget";
-@import "./components/widgets/widget-tag-cloud";
-
-@import "./pages/home";
+@import "./components/yandex-map";

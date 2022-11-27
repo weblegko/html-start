@@ -21,28 +21,7 @@
             width: 100%;
         }
     }
-    
-
-    .slick-arrow {
-        background-color: $gray-light;
-        border: 1px #d1d1d1 solid;
-        opacity: 0.6;
-        border: none;
-        width: 40px;
-        height: 40px;
-        box-shadow: none;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        z-index: 10;
-        outline: none;
-        line-height: 0;    
-        font-size: 24px;
-        
-        &:hover {
-            opacity: 1;
-        }
-    }
+   
 
     .carousel__item:hover {
         .carousel__item-img {
@@ -57,11 +36,33 @@
         
     }
 
+    .slick-arrow {
+        background-color: $gray-light;
+        border: 1px #d1d1d1 solid;
+        border-radius: 4px;
+        opacity: 0.6;
+        width: 40px;
+        height: 40px;
+        box-shadow: none;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+        outline: none;
+        line-height: 0;    
+        font-size: 24px;
+        padding: 0;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+    
     &-prev {
-        left: 26px;
+        left: 24px;
     }
     &-next {
-        right: 26px;
+        right: 24px;
     }
 
 }

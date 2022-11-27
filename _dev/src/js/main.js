@@ -11,7 +11,6 @@ import Lightbox from "./components/lightbox";
 import Slider from "./components/slider";
 import ScrollToTopBtn from "./components/scrolltotop-btn";
 import MainMenu from './components/main-menu';
-import NavBar from "./components/nav-bar";
 import ymaps from 'ymaps';
 
 class Application {
@@ -42,44 +41,19 @@ class Application {
     // Инициализации
     initCommon() {
 
-        //new Lightbox();
+        new Lightbox();
 
         new ScrollToTopBtn();
 
-        new NavBar({offsetForFixed: 300});
-
         new MainMenu('ul.sf-menu');
-
-        /* Нажали на кнопочку отправки формы обьратной связи*/
-        $('#zayavka-button').click(function(event) {
-            event.preventDefault();
-            $('#zayvka-submit').trigger('click');
-        });
-
-        if( (history.length == 0) && !document.referrer ) {
-            $('.js-go-back').hide();
-        }  
-
-        // прокрутить вниз первый экран
-        $('.js-go-back').click(function (e) {
-            e.preventDefault();
-            if( (1 < history.length) && document.referrer ) {
-                history.back();
-            }
-        });
-
-        //objectFitImages - полифил активация
-        // if (typeof objectFitImages === 'function') {
-        //     objectFitImages($('.image-cover img'));
-        // }
         
         // прокрутить вниз первый экран
-        $('.js-go-down').click(function (e) {
-            e.preventDefault();
-            let y = $('.header-wrap').height();
-            $("html, body").animate(
-                { scrollTop: y }, 1000);
-        });
+        // $('.js-go-down').click(function (e) {
+        //     e.preventDefault();
+        //     let y = $('.header-wrap').height();
+        //     $("html, body").animate(
+        //         { scrollTop: y }, 1000);
+        // });
 
         // // Плавная прокрутка при переходе по якорю
         // const $root = $('html, body');
@@ -106,7 +80,7 @@ class Application {
                 // Создание карты.
                 // https://tech.yandex.ru/maps/doc/jsapi/2.1/dg/concepts/map-docpage/
                 const myMap = new maps.Map('yandex-map', {
-                    center: [51.660781, 39.200269],
+                    center: [55.752004, 37.617734],
                     zoom: 13,
                 });
 
@@ -121,7 +95,7 @@ class Application {
                 
 
                 /* Создаем кастомные метки */
-                const myPlacemark0 = new maps.Placemark([51.660781, 39.200269], { 
+                const myPlacemark0 = new maps.Placemark([55.752004, 37.617734], { 
                         // Хинт показывается при наведении мышкой на иконку метки.
                         hintContent: 'Содержимое всплывающей подсказки',
                         // Балун откроется при клике по метке.
@@ -157,80 +131,7 @@ class Application {
     // Инициализация всех слайдеров
     initSliders() {
 
-        // Home Slider
-        let $homeSlider = $('.home-slider');
-        if ($homeSlider.length !== 0) {
-            new Slider($homeSlider, {
-                counter: false,
-                infinite: true,
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                adaptiveHeight: false,
-                fade: true,
-                arrows: true,
-                //dots: true,
-                autoplay: true,
-                //autoplaySpeed: 2000,
-
-                responsive: [
-                    {
-                        breakpoint: 992,
-                        settings: {
-                            slidesToShow: 1,
-                        }
-                    },
-
-                    {
-                        breakpoint: 766,
-                        settings: {
-                            slidesToShow: 1,
-                            arrows: false
-                        }
-                    },
-                ]
-
-
-            });
-        }
-
-
-        // Post carousel (home page)
-        let $postCarousel = $('.post-carousel');
-        if ($postCarousel.length !== 0) {
-            new Slider($postCarousel, {
-                counter: false,
-                infinite: true,
-                slidesToShow: 3,
-                slidesToScroll: 1,
-                adaptiveHeight: false,
-                fade: false,
-                arrows: true,
-                //dots: true,
-                autoplay: true,
-                //autoplaySpeed: 2000,
-                 
-                responsive: [
-                    {
-                        breakpoint: 992,
-                        settings: {
-                            slidesToShow: 2,
-                        }
-                    },
-
-                    {
-                        breakpoint: 766,
-                        settings: {
-                            slidesToShow: 2,
-                            arrows: false
-                        }
-                    },
-                ]
-            });
-        }
-
-        
-
-        // Slider in content
+        // Slider
         let $slider = $('.slider');
         if ($slider.length !== 0) {
             new Slider($slider, {
@@ -239,12 +140,14 @@ class Application {
                 slidesToShow: 1,
                 slidesToScroll: 1,
                 adaptiveHeight: true,
+                prevArrow: '<button class="slider-prev"><span class="icon-left"></span></button>',
+                nextArrow: '<button class="slider-next"><span class="icon-right"></span></button>',
                              
             });
         }
         
         
-        // Carousel in content
+        // Carousel
         let $carousel = $('.carousel');
         if ($carousel.length !== 0) {
             new Slider($carousel, {

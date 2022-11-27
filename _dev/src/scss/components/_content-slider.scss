@@ -33,6 +33,7 @@
     .slick-arrow {
         background-color: $gray-light;
         border: 1px #d1d1d1 solid;
+        border-radius: 4px;
         opacity: 0.6;
         width: 40px;
         height: 40px;
@@ -44,6 +45,7 @@
         outline: none;
         line-height: 0;    
         font-size: 24px;
+        padding: 0;
 
         &:hover {
             opacity: 1;

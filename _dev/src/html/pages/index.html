@@ -1,18 +1,97 @@
-{% extends "layouts/layout-home-page.html" %}
+<!doctype html>
+<html lang="en">
 
-{% block content %}
-    {% include 'partials/home-page-sections/section-home-slider.html' %}
+{% include 'partials/head.html' %}
 
-    {% include 'partials/home-page-sections/section-text.html' %}
+<body>
 
-    {% include 'partials/home-page-sections/section-contacts.html' %}
+    <div class="root home-page">
 
-    {% include 'partials/home-page-sections/section-post-carousel.html' %}
+        {% include 'partials/header.html' %}
 
-    {% include 'partials/home-page-sections/section-bg-fixed.html' %}
+        <div class="site-main">
            
-    {% include 'partials/home-page-sections/section-img-text.html' %}
-    
-    {% include 'partials/home-page-sections/section-yandex-map.html' %}
+            <div class="container">
+                
+                <h1>Главная страница сайта Light</h1>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis
+                    eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit,
+                    posuere a, pede.<br />
+                    Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci.
+                    Aenean
+                    dignissim pellentesque felis.</p>
+                
 
-{% endblock %}        
+                    <h2>Slick-slider</h2>
+                    <div class="slider-wrap">
+                        <div class="slider">
+                            <div class="slider__item"><img src="/img/ibiza/1.jpg" alt=".." /></div>
+                            <div class="slider__item"><img src="/img/ibiza/2.jpg" alt=".." /></div>
+                            <div class="slider__item"><img src="/img/ibiza/3.jpg" alt=".." /></div>
+                            <div class="slider__item"><img src="/img/ibiza/4.jpg" alt=".." /></div>
+                            <div class="slider__item"><img src="/img/ibiza/5.jpg" alt=".." /></div>
+                            <div class="slider__item"><img src="/img/ibiza/6.jpg" alt=".." /></div>
+                            <div class="slider__item"><img src="/img/ibiza/7.jpg" alt=".." /></div>
+                            <div class="slider__item"><img src="/img/ibiza/8.jpg" alt=".." /></div>
+                        </div>
+                    </div>
+
+                    <h2>Slick-carousel + Fancybox gallery</h2>
+                    <div class="carousel-wrap">
+                        <div class="carousel">
+                            <div class="carousel__item"><a href="/img/ibiza/1.jpg" data-fancybox="gallery-1"><img src="/img/ibiza/1.jpg" alt=".." /></a></div>
+                            <div class="carousel__item"><a href="/img/ibiza/2.jpg" data-fancybox="gallery-1"><img src="/img/ibiza/2.jpg" alt=".." /></a></div>
+                            <div class="carousel__item"><a href="/img/ibiza/3.jpg" data-fancybox="gallery-1"><img src="/img/ibiza/3.jpg" alt=".." /></a></div>
+                            <div class="carousel__item"><a href="/img/ibiza/4.jpg" data-fancybox="gallery-1"><img src="/img/ibiza/4.jpg" alt=".." /></a></div>
+                            <div class="carousel__item"><a href="/img/ibiza/5.jpg" data-fancybox="gallery-1"><img src="/img/ibiza/5.jpg" alt=".." /></a></div>
+                            <div class="carousel__item"><a href="/img/ibiza/6.jpg" data-fancybox="gallery-1"><img src="/img/ibiza/6.jpg" alt=".." /></a></div>
+                            <div class="carousel__item"><a href="/img/ibiza/7.jpg" data-fancybox="gallery-1"><img src="/img/ibiza/7.jpg" alt=".." /></a></div>
+                            <div class="carousel__item"><a href="/img/ibiza/8.jpg" data-fancybox="gallery-1"><img src="/img/ibiza/8.jpg" alt=".." /></a></div>
+                        </div>
+                    </div>
+
+
+                    <h2>Видео с ютюба</h2>
+                    
+
+                    <div class="video">
+                        <iframe width="1280" height="720" src="https://www.youtube.com/embed/MH7NbNbUOp0" title="Ibiza Summer Mix 2022 🍓 Best Of Tropical Deep House Music Chill Out Mix 2022 🍓 Chillout Lounge #478" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+
+
+                    <h2>Модальное окно и галлерея Fancybox 3</h2>
+                    <div class="fancy-btns-wrap">
+                        <a class="btn js-link-modal" href="javascript:;" data-src="#modal">Fancybox модальное окно</a>
+
+                        <a class="btn" href="/img/ibiza/1.jpg" data-fancybox="gallery">Fancybox галерея</a>
+                        <a style="display: none;" href="/img/ibiza/2.jpg" data-fancybox="gallery"></a>
+                        <a style="display: none;" href="/img/ibiza/3.jpg" data-fancybox="gallery"></a>
+                        <a style="display: none;" href="/img/ibiza/4.jpg" data-fancybox="gallery"></a>
+                    </div>
+
+                    <h2>Видео в модальном окне при клике по картинке</h2>
+                    <div class="vidos">
+                        <a data-fancybox href="https://www.youtube.com/embed/MH7NbNbUOp0">
+                            <img src="/img/ibiza/1.jpg" alt=".." />
+                        </a>
+                    </div>
+
+
+                    <h2>Яндекс карта</h2>
+                    <div id="yandex-map" class="yandex-map"></div>
+                    
+            </div>
+
+        </div>
+
+        {% include 'partials/footer.html' %}
+
+    </div>
+
+    {% include 'partials/modal.html' %}
+
+    {% include 'partials/javascripts.html' %}
+
+</body>
+
+</html>

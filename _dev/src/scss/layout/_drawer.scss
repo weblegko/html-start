@@ -137,13 +137,13 @@
             align-items: center;
             justify-content: center;
             border-radius: 0;
-            border: 1px solid $gray-light;
-            background: #fff;
+            background: #f1f1f1;
             outline: none;
+            border: none;
 
             &::before {
-                content: "c";
-                font-family: 'icons';
+                content: "\e80b";
+                font-family: "fontello";
                 transition: all 0.3s;
             }
 
@@ -158,7 +158,7 @@
     }
 
     > li {
-        border-top: 1px solid $gray-medium;
+        //border-top: 1px solid $gray-medium;
         padding: 16px 0;
         
         > a {
@@ -168,37 +168,6 @@
     
 }
 
-
-.drawer-signin {
-    margin-bottom: 32px;
-    border-top: 1px solid $gray-medium;
-    padding-top: 12px;
-
-    a {
-        color: $gray;
-        text-decoration: none;
-        font-weight: 600;
-        
-        &:active {
-            color: $color-1;
-        }
-    }
-
-    i {
-        font-size: 32px;
-        margin-right: 16px;
-    }   
-}
-
-.drawer-search {
-    margin-bottom: 16px;
-    .search-widget {
-        width: 100%;
-        input {
-            width: 100%;
-        }
-    }
-}
 
 .drawer-close-btn {
     position: absolute;

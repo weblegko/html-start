@@ -1,0 +1,14 @@
+
+// @use "@material/button";
+// @include button.core-styles;
+
+//@import "@material/button/mdc-button";
+
+
+.btn {
+    background-color: $color-1;
+    display: inline-block;
+    padding: 20px;
+    font-weight: 700;
+    color: #fff;
+}
