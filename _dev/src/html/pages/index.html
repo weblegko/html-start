@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" class="page">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Homepage</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+   
+    @include('../partials/css.html')
+
+    <script defer src="js/vendors.js"></script>
+    <script defer src="js/main.js"></script>
+  </head>
+
+  <body>
+    
+    <div class="root">
+      @include('../partials/header.html')
+      
+      <main class="site-main" id="main">
+        <div class="container">
+
+          <br>
+          <div class="row">
+            <div class="col-md-2">
+              <a class="btn" data-fancybox="gallery" href="img/1.jpg">Fancybox</a>
+            </div>
+            
+            <div class="col-md-6">
+              <div class="carousel-wrap">
+                <div class="carousel">
+                  <div><a data-fancybox="gallery" href="img/1.jpg"><img src="img/1-middle.jpg" alt=".."></a></div>
+                  <div><a data-fancybox="gallery" href="img/2.jpg"><img src="img/2-middle.jpg" alt=".."></a></div>
+                  <div><a data-fancybox="gallery" href="img/3.jpg"><img src="img/3-middle.jpg" alt=".."></a></div>
+                  <div><a data-fancybox="gallery" href="img/4.jpg"><img src="img/4-middle.jpg" alt=".."></a></div>
+                  <div><a data-fancybox="gallery" href="img/5.jpg"><img src="img/5-middle.jpg" alt=".."></a></div>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+
+          <br>
+
+          <div class="row">
+            <div class="col-sm">
+              <div class="block">1</div>
+            </div>
+            <div class="col-sm">
+              <div class="block">2</div>
+            </div>
+            <div class="col-sm">
+              <div class="block">3</div>
+            </div>
+          </div>
+
+
+
+        </div>
+      </main>
+
+      @include('../partials/footer.html')
+    </div>
+
+  </body>
+
+</html>
