@@ -1,0 +1,320 @@
+/**
+  Normalizing the box model
+ */
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+/**
+  Remove left padding from list tags (ul, ol)
+  that have a class attribute
+ */
+:where(ul, ol):where([class]) {
+  padding-left: 0;
+}
+
+/**
+  Remove outer margins for the body and
+  two other tags (blockquote, figure)
+  that have a class attribute
+ */
+body,
+:where(blockquote, figure):where([class]) {
+  margin: 0;
+}
+
+/**
+  Remove vertical margins for specific tags
+  (headings, paragraphs, lists)
+  that have a class attribute
+ */
+:where(h1, h2, h3, h4, h5, h6, p, ul, ol, dl):where([class]) {
+  margin-block: 0;
+}
+
+:where(dd[class]) {
+  margin-left: 0;
+}
+
+:where(fieldset[class]) {
+  margin-left: 0;
+  padding: 0;
+  border: none;
+}
+
+/**
+  Remove the default marker from unordered lists (ul)
+  that have a class attribute
+ */
+:where(ul[class]) {
+  list-style: none;
+}
+
+:where(address[class]) {
+  font-style: normal;
+}
+
+/**
+  Reset vertical margins for paragraphs,
+  declare a local variable for the bottom margin
+  to avoid conflicts with more complex selectors
+ */
+p {
+  --paragraphMarginBottom: 24px;
+
+  margin-block: 0;
+}
+
+/**
+  Add a bottom margin to paragraphs without a class attribute
+  that are not the last child among their siblings
+ */
+p:where(:not([class]):not(:last-child)) {
+  margin-bottom: var(--paragraphMarginBottom);
+}
+
+/**
+  Simplify handling of images and videos
+ */
+img,
+video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+img {
+  object-fit: cover;
+  font-style: italic;
+  user-select: none;
+  font-size: inherit;
+  line-height: 1.5;
+  text-wrap: balance;
+}
+
+img[data-img-loading-error] {
+  --img-border-style: 0.25em solid
+    color-mix(in srgb, currentColor, transparent 75%);
+  --img-border-space: 1em;
+
+  border-inline-start: var(--img-border-style);
+  border-block-end: var(--img-border-style);
+  padding-inline-start: var(--img-border-space);
+  padding-block: var(--img-border-space);
+  max-width: 42ch;
+}
+
+abbr[title] {
+  text-decoration: none;
+}
+
+cite {
+  display: inline-block;
+  font-style: normal;
+}
+
+/**
+  Inherit font properties for input fields
+ */
+input,
+textarea,
+select,
+button {
+  font: inherit;
+}
+
+html {
+  /**
+    Useful in most cases
+    (e.g., to "stick" the footer to the bottom of the site)
+   */
+  height: 100%;
+
+  /**
+    Prevent horizontal interface jumps
+    when the scrollbar appears or disappears
+   */
+  scrollbar-gutter: stable;
+  text-rendering: optimizelegibility;
+}
+
+/**
+  Smooth scrolling
+ */
+html,
+:has(:target) {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+body {
+  /**
+    Useful in most cases
+    (e.g., to "stick" the footer to the bottom of the site)
+   */
+  min-height: 100%;
+
+  /**
+    Unified line height
+   */
+  line-height: 1.5;
+}
+
+/**
+  Normalize the height of link elements
+  when inspecting them in DevTools
+ */
+a:where([class]) {
+  display: inline-flex;
+}
+
+/**
+  Pointer cursor on hover for elements
+ */
+button,
+label {
+  cursor: pointer;
+}
+
+button {
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  user-select: none;
+}
+
+a {
+  color: inherit;
+
+  &[class] {
+    text-decoration: none;
+  }
+}
+
+/**
+  Standardize the color of SVG elements
+  (excluding those with a 'fill' attribute set to 'none'
+  or starting with 'url')
+ */
+:where([fill]:not([fill='none'], [fill^='url'])) {
+  fill: currentcolor;
+}
+
+/**
+  Standardize the color of SVG elements
+  (excluding those with a 'stroke' attribute set to 'none')
+ */
+:where([stroke]:not([stroke='none'], [stroke^='url'])) {
+  stroke: currentcolor;
+}
+
+/**
+  Fix delay in color changes
+  when interacting with SVG elements
+ */
+svg * {
+  transition-property: fill, stroke;
+}
+
+/**
+  Make table borders collapse into a classic 'collapse' view
+ */
+:where(table) {
+  border-collapse: collapse;
+  border-color: currentcolor;
+}
+
+/**
+  Remove all animations and transitions
+  for people who prefer to avoid them
+ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+dialog {
+  border: none;
+  padding: 0;
+}
+
+summary {
+  cursor: pointer;
+  list-style: none;
+
+  &::-webkit-details-marker {
+    display: none;
+  }
+}
+
+input {
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  border-radius: 0;
+  background-color: #fff;
+  margin: 0;
+
+  &::-webkit-search-decoration,
+  &::-webkit-search-cancel-button,
+  &::-webkit-search-results-button,
+  &::-webkit-search-results-decoration,
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    display: none;
+  }
+
+  &[type='number'] {
+    -moz-appearance: textfield;
+  }
+
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus {
+    background-color: transparent !important;
+    transition:
+      background-color 10000000s 10000000s,
+      box-shadow 10000000s 10000000s;
+  }
+
+  &[type='search']::-ms-clear,
+  &[type='search']::-ms-reveal {
+    appearance: none;
+    width: 0;
+    height: 0;
+  }
+
+  &[type='search']::-webkit-search-decoration,
+  &[type='search']::-webkit-search-cancel-button,
+  &[type='search']::-webkit-search-results-button,
+  &[type='search']::-webkit-search-results-decoration {
+    appearance: none;
+  }
+}
+
+textarea {
+  &::-webkit-resizer {
+    display: none;
+  }
+
+  &::-moz-resizer {
+    display: none;
+  }
+
+  &::resizer {
+    display: none;
+  }
+}
+
+mark {
+  background-color: transparent;
+  color: currentcolor;
+}

@@ -1,0 +1,29 @@
+
+:root {
+  --font-family-base: 'Inter', sans-serif;
+  --font-family-accent: 'Kumbh Sans', sans-serif;
+
+  --color-light: hsl(0deg, 0%, 100%);
+  --color-dark: hsl(0deg, 0%, 0%);
+  --color-green: hsl(171deg, 97%, 26%);
+  --color-mint: hsl(157deg, 29%, 85%);
+  --color-red: hsl(350, 88%, 47%);
+
+  --color-1: #ccc;
+  --color-2: green;
+  --color-text: #000;
+
+  --container-width: 1600px;
+  --container-padding-x: 16px;
+
+  --border: 1px solid var(--color-dark-15);
+
+  --shadow: 0 0 0 3px #191919;
+
+  --transition-duration: 0.2s;
+
+  --preloader-z-index: 1001;
+  --header-nav-z-index: 10;
+
+  --overlay-shadow: rgba(0, 0, 0, 0.6);
+}

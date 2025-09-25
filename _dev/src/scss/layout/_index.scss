@@ -1,0 +1,64 @@
+@use "mixins" as *;
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    background: #fff;
+    width: 100%;
+    //border: 20px solid var(--color-red);
+}
+
+.root {
+    display: flex;
+    flex-direction: column;
+    // position: relative;
+    min-height: 100vh;
+    min-width: 320px;
+    overflow: hidden;
+}
+
+.site-main {
+    flex: 1 0 auto;
+    padding:  0;
+    background-color: #fff;
+    position: relative;
+    
+}
+
+
+// для наглядности сетки bootstrap-5
+.col {
+    background-color: #ccc;
+}
+
+.block {
+    padding: 32px;
+    background-color: #0cc;
+ 
+    // пример использования микисинов @include media
+    @include media(">=sm"){
+        background: rgb(243, 165, 165);
+    }
+
+    @include media(">=md"){
+        background: rgb(180, 180, 245);
+    }
+
+    @include media(">=lg"){
+        background: rgb(143, 235, 143);
+    }
+
+    @include media(">=xl"){
+        background: yellow;
+    }
+
+    @include media(">=xxl"){
+        background: magenta;
+    }
+
+
+
+}

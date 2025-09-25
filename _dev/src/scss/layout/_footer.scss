@@ -1,0 +1,8 @@
+@use "mixins" as *;
+
+.footer{
+    color: #fff;
+    background-color: var(--color-2);
+    padding: 32px 0;
+}
+
